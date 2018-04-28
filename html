@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ovo je ispitni zadatak</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="Ispitni2017.css" />
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="vrh">
+            <div class="lijeviDiv"><img id="logo" src="logo.png">
+            </div>
+            <div class="desniDiv"><h3>Ovo je ispitni zadatak - Ime Prezime - Broj indeksa</h3>
+            <div class="izborSrednji">
+                <ul id="listaSrednja">
+                <li class="izborLinije"><a href="">Programiranje I</a></li>
+                <li class="izborLinije"><a href="">WRD</a></li>
+                <li class="izborLinije">Klikni za jos
+                    <ul id="listaUgn">
+                        <li class="izborLinijeUg"><a href="">Programiranje I</a></li>
+                        <li class="izborLinijeUg"><a href="">WRD</a></li>
+                        <li class="izborLinijeUg">PSR</li>
+                        <li class="izborLinijeUg">SP</li>
+                    </ul>
+                </li>
+                <li class="izborLinije">SP</li>
+            </ul></div></div>
+        </div>
+        
+            <div class="SadrzajDiv"><div class="sadrzajUnutrasnji">
+                <form id="Forma" action="http://wrd.app.fit.ba/akcija1">
+                    <div class="PrviDioForme">
+                    <label>First name:</label><br>
+                    <input type="text" name="FirstName" required><br>
+                    <label>Last name:</label><br>
+                    <input type="text" name="LastName" placeholder="Vase prezime" required><br>
+                    <label>Kanton:</label><br>
+                    <input type="text" name="Kanton" pattern="[A-Za-z]{3}"
+                     title="Unesite 3 slova skracenice kantona" required><br>
+                    <label>Godina studija (vrijednosti koje se proslijeđuju 1.,2.,3):</label><br>
+                    <input type="radio" name="odabir" value="1">I-prva<br>
+                    <input type="radio" name="odabir" value="2">II-druga<br>
+                    <input type="radio" name="odabir" value="3">III-treca<br>
+                    <br>
+                    <input type="submit" value="Posalji">
+                    <input type="reset" value="Ponisti">
+                </div><div class="DrugiDioForme">
+                    <label>Oblast interesa (vrijednosti koje se proslijeđuju A.,D):</label><br>
+                    <input type="radio" name="odabir1" value="A">Više volim sistemsku administraciju<br>
+                    <input type="radio" name="odabir1" value="D">Više volim development<br>
+                    <br>
+                    <label>Najdraži predmeti (vrijednosti koje se proslijeđuju A,B,C):</label><br>
+                    <input type="checkbox" name="check" value="A">PR I<br>
+                    <input type="checkbox" name="check" value="B">WRD<br>
+                    <input type="checkbox" name="check" value="C">ASP<br>
+                    <br>
+                    Email:
+                    <input type="email" name="email" required><br>
+                    Ocekivana primanja:
+                    <output name="output">2000</output>
+                    <input id="slide" name="slide" type="range" min="1000" 
+                    max="5000" value="2000" onchange="output.value=value">
+                </div>
+                </form>
+            </div></div>
+            
+            <div class="SideDiv">
+                <pre>Ovaj tekst je sa desne strane.
+                    
+<b>Nalazi se u tagu koji omogućava 
+da se prikažu novi redovi
+     i dodatni space.</b>
+Klijent je nacrtao ovo
+    ali nije znao imena boja
+        u CSS-u.
+    Boje svih elemenata
+pronađite pomoću collor picker-a u notepadu.
+
+    <b>Tekst je centriran.</b>
+
+Veličina fonta je 150%.
+Desni scroll bar se pojavljuje automatski
+    po potrebi.
+
+<b>Ovo ne morate prekucavati</b>
+ da ne gubite vrijeme.
+     Samo izaberite tag
+         koji     ce          
+ omoguciti ovakav   prikaz
+  t  e  k  s  t aa !!!!
+
+ SRETNO!!!SRETNO!!!SRETNO!!!
+ SRETNO!!!SRETNO!!!SRETNO!!!
+SRETNO!!!SRETNO!!!SRETNO!!!
+                </pre>
+            </div><div class="DnoDiv">
+                <p>Copyright: Anisa Ciric- IB140071</p>
+                <p>U ovom dijelu se koristi pseudo-element tako da je prva linija teksta bijele boje</p>
+                <p>Veličine i pozicije elemenata su takve da zadržavaju omjere ako se mijenja veličina prozora</p>
+            
+            </div>
+        </div>
+        
+</body>
+</html>
