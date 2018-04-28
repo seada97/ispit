@@ -1,0 +1,145 @@
+.wrapper{
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0px;
+    left:0px;
+}
+.vrh{
+    position:relative;
+    height:20%;
+    width:100%;
+    background-color:rgb(123, 123, 141);
+}
+.lijeviDiv,.desniDiv{
+    display:inline-block;
+    height:100%;
+}
+.lijeviDiv{
+    vertical-align:top;
+    width:15%;
+}
+#logo{
+    width:100%;
+    height:100%;
+}
+.desniDiv{
+    vertical-align:top;
+    width:85%;
+    text-align:center;
+    height:auto;
+}
+.desniDiv h3{
+    color:white;
+    font-size:1.5vw;
+}
+/*za navigaciju*/
+.izborSrednji{
+    width:85%;
+    margin:auto;
+}
+#listaSrednja, #listaUgn{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+#listaUgn{
+    display:none;
+}
+.izborLinije,.izborLinijeUg{
+   
+    vertical-align:top;
+    background-color:rgb(74, 82, 80);
+    padding:1vw;
+    text-align:center;
+    color:white;
+    font-size:1.2vw;
+    
+}
+.izborLinije{
+    display:inline-block;
+}
+.izborLinijeUg{
+    margin-bottom:5px;
+}
+.izborLinije a{
+    color:white;
+}
+.izborLinije:hover,.izborLinijeUg:hover{
+    background-color:rgb(92, 91, 91);
+}
+.izborLinije:hover>#listaUgn{
+    display:block;
+    position: relative;  /*IZMJENA DA NE NESTAJE MENU KAD POINTER DODJE IZNAD FORME*/
+    z-index: 100;   /*JER SE DESAVALO DA JE MENU OTVOREN DOK JE POINTER U DESNOJ STRANI LINKA*/
+    /*ALI KAD SE POMJERI LIJEVO DA DODJE IZNAD COSKA FORME MENU NESTAJE*/
+}
+
+/*Ovdje nista nisam pakovala u divove jer mi stvara problem*/
+
+/*Ovdje stavljam forme jedna pored druge*/
+.PrviDioForme,.DrugiDioForme{
+    display:inline-block;
+    position:relative;
+    height:20%;
+    width:40%;
+}
+.PrviDioForme{
+    margin-top:4%;
+    margin-left:1%;
+}
+.DrugiDioForme{
+    vertical-align: top;
+}
+/*ovo je pink povrsina sa pravim dimenzijama*/
+.SadrzajDiv{
+    float:left;
+    width:80%;
+    height:60%;
+    background:pink;
+    overflow:auto;
+    
+}
+.sadrzajUnutrasnji{ /*IZMJENA - NOVA KLASA*/
+    padding:1%;
+    
+
+}
+/*ovo je dole footer sa pravim dimenzijama*/
+.DnoDiv{
+    float:left;
+    width:80%;
+    height:20%;
+    background:grey; 
+    vertical-align:top;
+    text-align: center;
+}
+.SadrzajDiv,.SideDiv,.DnoDiv{
+    display:inline-block;
+}
+/*moram uraditi float da ga pozicioniram desno skroz inace pravi ogromni prostor od topa i izmedju sadrzaja i footera*/
+.SideDiv{
+    background:lightblue;
+    width:20%;
+    height:80%;
+    float:right;
+    text-align:center;
+}
+.DnoDiv p:first-child{
+    color:white;
+    font-size:0.8vw;
+}
+.DnoDiv p:nth-child(2){
+    font-size:1vw;
+}
+.DnoDiv p:last-child{
+    font-size:1.5vw;
+    color:rgb(233, 233, 50);
+}
+.SideDiv pre{
+    white-space:pre-wrap; 
+    font-size:1vw;
+}
+label{
+    font-size:1.2vw;
+}
