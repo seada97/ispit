@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Integralni-Ispit</title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet1.css">
+    <script src="jquery-2.2.3.js"></script>
+</head>
+
+<body>
+    <ul id="lista">
+        <li><a href="#home">Pocetna</a></li>
+        <li><a href="#news">Upis</a></li>
+        <li><a href="#news">Informacije</a></li>
+        <li class="dropdown">
+            <a href="#">Izbor</a>
+            <div class="dropdown-content">
+                <a href="#">Prva godina</a>
+                <a href="#">Druga godina</a>
+                <a href="#">Treca godina</a>
+            </div>
+        </li>
+        <li><a href="#news">Kontakti</a></li>
+
+    </ul>
+
+    <div id="container">
+        <form id="forma">
+            <center>
+                <h3>Prijavi se</h3>
+            </center><br /><br />
+            <hr />
+            <p>
+                <label for="username" id="labelusername">Vaše ime i prezime</label><br>
+                <input class="boxes" type="text" id="username" name="username" placeholder="Vaše ime i prezime" onblur="validateUsername()"/>
+                <p class="error" id="imePrezimeErr">Minimalno 5 karaktera!</p>
+            </p>
+
+            <p>
+                <label for="brindeksa" id="labelbrindeksa" style=" display:inline">Indeks / Godina:</label>
+                <input type="text" id="brindeksa" name="brindeksa" style=" width 50px" placeholder="Indeks" onblur="validateIndex()" />
+            <p class="error" id="indeksErr">8 karaktera samo slova i brojevi!</p>
+                <input type="text" id="godinaupisa" name="godinaupisa" style=" width 50px" placeholder="Godina" onblur="validateGodUpisa()"/>
+            <p class="error" id="godUpisaErr">samo brojevi!</p>
+
+            </p>
+
+            <label>Omiljena oblast:</label><br>
+            <select class="boxes" id="omiljenaOblast">
+                <option>Programinranje</option>
+                <option>WRD</option>
+                <option>Baze podataka</option>
+                <option>SI</option>
+            </select>
+            <!--izbor Programiranje WRD Baze podataka SI-->
+
+            <p>
+                <label for="email" id="labelemail">Predložena email adresa</label><br>
+                <input class="boxes" type="email" id="email" name="email" placeholder="Vaša email adresa" onmouseover="AutoMail()" />
+            </p>
+
+            <div id="div12" class="klasaButton">
+
+                <p class="button left">
+
+                    <label id="labela1">
+                        <input type="submit" id="save" value="Prijavi se" onclick="return validateForm();" />
+                    </label>
+                </p>
+            </div>
+        </form>
+    </div>
+    <div id="container2">
+        <div id="forma2" style="width:50%">
+            <div id="div12" class="klasaButton">
+                <br> <br><br> <br>
+                <p class="button left">
+
+                    <input value="Ucitaj podatke" type="button" onclick="ucitajPodatke()" /> <input type="button" value="Provjeri i snimi" onclick="snimiPodatke()" />
+                </p>
+                <br> <br>
+                <table id="osobe" border="1" style="width:100%">
+
+                    <tr>
+                        <th>Ime i prezime</th>
+                        <th>broj indexa - godina</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="Script1.js">
+    </script>
+</body>
+
+</html>
+
+///////////////////////////////////////css
+body
+{
+}
+
+.error{
+    border:2px solid yellow;
+    color:red;
+    display:none;
+}
+
+body{
+    margin:0;
+    padding:0;
+    position: relative;
+}
+#container{
+    position: absolute;
+    margin-top: 10%;
+   left: 10%;
+   color:red;
+}
+#forma,#forma2{
+   height: 80%; 
+    box-shadow: 2px 5px 15px 2px purple;
+   border-radius: 15px;
+       box-shadow: 
+        inset 0px -15px -10px -10px black,
+}
+#container2{
+    position: absolute;
+    margin-top: 10%;
+    width: 700px;
+    height: 500px;
+    left: 40%;
+}
+.boxes{
+    width: 300px;
+    height: 25px;
+}
+#save{
+    width: 90px;
+    height: 30px;
+    border-radius: 7px;
+    background-color:#6997e0;
+}
+#container2 input{
+    width: 150px;
+    height: 20px;
+    background-color:#6997e0;
+}
+.button left{
+    position: relative;
+}
+#lista{
+    position: absolute;
+    top: 200px;
+    right: 0;
+list-style-type: none;
+height: 400px;
+}
+#lista a{
+text-decoration: none;    
+}
+#lista >li,.dropdown-content a{
+margin-top: 5px;
+    background-color: gray;
+    color:white;
+    border-radius: 15px;
+    box-shadow: 2px 5px 2px purple;  
+    border-top-left-radius: 0; 
+    width: 140px;
+    height: 30px;
+    text-indent: 10px;
+
+}
+.dropdown-content a{
+display: block;
+position: relative;
+right: 70px;
+color: gray;
+background-color: white;
+}
+.dropdown-content a:hover{
+    background-color: gray;
+    color: white;
+}
+.dropdown-content{
+
+    display: none;
+}
+.dropdown:hover>.dropdown-content{
+    display:block;
+}
+//////////////////////////////js
+// JavaScript source code
+
+
+
+function AutoMail() {
+
+
+    var imeP = document.getElementById("username").value;
+    var oblast = document.getElementById("omiljenaOblast").value;
+    var godina = document.getElementById("godinaupisa").value;
+    var indeks = document.getElementById("brindeksa").value;
+
+
+    var duz=8-indeks.length;
+    for (var i = 0; i < duz; i++)
+        indeks = "0" + indeks;
+
+
+    var string = ((imeP.charAt(imeP.indexOf(" ") + 1)) + imeP.charAt(0)).toLowerCase() + "." + oblast.toLowerCase() + "_" + godina[godina.length - 2] + godina[godina.length-1] + "." + indeks + "@edu.fit.ba";
+
+    document.getElementById("email").value = string;
+
+}
+
+function validateUsername() {
+
+    var ip=document.getElementById("username").value;
+
+    document.getElementById("imePrezimeErr").style.display = (ip.length < 5)?"block":"none";
+    
+}
+function validateIndex() {
+
+    var indeks = document.getElementById("brindeksa").value;
+
+    var spec = /[!@#$%^&*()_+|}{?><]/;
+
+    document.getElementById("indeksErr").style.display = (indeks.length < 8 || spec.test(indeks)) ? "block" : "none";
+
+}
+function validateGodUpisa() {
+
+    var godina = document.getElementById("godinaupisa").value;
+
+    var spec = /[!@#$%^&*()_+|}{?><]/;
+    var slova=/[a-zA-Z]/;
+
+    document.getElementById("godUpisaErr").style.display = (slova.test(godina) || spec.test(godina)) ? "block" : "none";
+
+}
+
+localStorage.setItem("ime", "");
+localStorage.setItem("index", "");
+
+function snimiPodatke() {
+
+    var ip=document.getElementById("username").value;
+    var ind=document.getElementById("brindeksa").value+"-"+document.getElementById("godinaupisa").value;
+
+    var ime = localStorage.getItem("ime");
+    var index = localStorage.getItem("index");
+
+    if (ime.length == 0) {
+        ime = ip;
+        index = ind;
+    }
+    else {
+        ime += "," + ip;
+        index += "," + ind;
+    }
+
+
+    localStorage.setItem("ime", ime);
+    localStorage.setItem("index", index);
+
+}
+function ucitajPodatke() {
+
+    var tabela = document.getElementById("osobe");
+
+    tabela.innerHTML = "<tr><th>Ime i prezime</th><th>broj indexa - godina</th></tr>";
+    
+
+    var ime = localStorage.getItem("ime");
+    var index = localStorage.getItem("index");
+
+    var niz1 = ime.split(",");
+    var niz2 = index.split(",");
+
+    for (var i in niz1) {
+        document.getElementById('osobe').innerHTML += '<tr><td>' + niz1[i] + '</td><td>' + niz2[i] + '</td></tr>';
+    }
+
+    
+
+}
